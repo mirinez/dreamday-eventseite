@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dreamday Events</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================================
+     HEADER & NAVIGATION
+-->
+
+<header>
+    <!-- Logo and Navigation -->
+    <div class="logo">Dreamday Events</div>
+    <nav>
+        <ul>
+            <li><a href="#about">Über uns</a></li>
+            <li><a href="#services">Leistungen</a></li>
+            <li><a href="#location">Anfahrt</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+</header>
+<!-- ============================================
+        END OF HEADER & NAVIGATION
+-->
+
+<!-- ============================================
+     HERO SECTION
+-->
+
+<section class="hero" id="hero">
+    <div class="hero-content">
+        <h1>Ihre Träume, perfekt geplant!</h1>
+        <p class="hero-subtitle">Wir machen jeden Moment unvergesslich</p>
+    </div>
+</section>
+
+<!-- ============================================
+        END OF HERO SECTION
+-->
+
+<!-- ============================================
+     ABOUT SECTION
+-->
+
+<section class="about" id="about">
+    <h2>Über uns</h2>
+    <div class="about-content">
+        <div class="about-text">
+            <p>Seit über 15 Jahren gestalten wir die schönsten Momente im Leben unserer Kunden. Von intimen Hochzeiten bis hin zu großen Firmenfeiern - wir sorgen für unvergessliche Erinnerungen.</p>
+        </div>
+        <img src="img/about.jpg" alt="Über uns" class="about-image">
+    </div>
+</section>
+
+<!-- ============================================
+     SERVICES SECTION
+-->
+
+<section class="services" id="services">
+    <h2>Unsere Leistungen</h2>
+    
+    <div class="services-grid">
+        <!-- Service 1: Hochzeitsplanung -->
+        <div class="service-card">
+            <div class="service-text">
+                <h3>Hochzeitsplanung</h3>
+                <p>Von der ersten Idee bis zum letzten Tanz - wir begleiten Sie durch jeden Moment Ihrer Traumhochzeit. Individuell, persönlich und bis ins kleinste Detail durchdacht.</p>
+            </div>
+            <img src="img/wedding.jpg" alt="Hochzeitsplanung" class="service-image">
+        </div>
+
+        <!-- Service 2: Firmenfeiern - Image Left, Text Right -->
+        <div class="service-card row-reverse">
+            <img src="img/corporate.jpg" alt="Firmenfeiern" class="service-image">
+            <div class="service-text">
+                <h3>Firmenfeiern</h3>
+                <p>Professionelle Planung von Firmenjubiläen, Weihnachtsfeiern oder Teambuilding-Events. Wir schaffen den perfekten Rahmen für Ihr Unternehmen.</p>
+            </div>
+        </div>
+
+        <!-- Service 3: Private Feiern -->
+        <div class="service-card">
+            <div class="service-text">
+                <h3>Private Feiern</h3>
+                <p>Ob Geburtstag, Jubiläum oder Familienfeier - wir verwandeln Ihre Vision in Realität und kümmern uns um jedes Detail.</p>
+            </div>
+            <img src="img/private.jpg" alt="Private Feiern" class="service-image">
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     LOCATION SECTION
+-->
+
+<section class="location" id="location">
+    <h2>Hier finden Sie uns</h2>
+    <div class="map-container">
+    <!-- Iframe for map -->
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41508.33280544642!2d8.348162050000001!3d49.4415986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479634cc9735e6d3%3A0x2f8a3f92c976b0bf!2s67112%20Mutterstadt!5e0!3m2!1sen!2sde!4v1772550605038!5m2!1sen!2sde" 
+        width="600" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+    </iframe>
+    </div>
+</section>
+
+<!-- ============================================
+     CONTACT SECTION
+-->
+
+<section class="contact" id="contact">
+    <h2>Kontaktieren Sie uns</h2>
+    
+    <div class="contact-grid">
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h3>Lassen Sie uns Ihre Träume verwirklichen</h3>
+            <p><strong>Adresse:</strong></p>
+            <p>Wir freuen uns darauf, Ihre Vision kennenzulernen.</p>
+            <p>Musterstraße 123</p>
+            <p>12345 Musterstadt</p>
+            <p>Tel: 0123 456789</p>
+        </div>
+
+        <!-- Contact Form -->
+        <form class="contact-form" method="POST" action="/contact/send">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Ihr Name..." required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" name="email" placeholder="Ihre E-Mail..." required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Nachricht</label>
+                <textarea id="message" name="message" placeholder="Ihre Nachricht..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Absenden</button>
+        </form>
+    </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+-->
+
+<footer>
+    <p>&copy; 2026 Dreamday Events - Míriam Domínguez Martínez | DBE Academy </p>
+</footer>
+
+</body>
+</html>

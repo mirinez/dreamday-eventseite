@@ -1,0 +1,476 @@
+/* style.css — Dreamday Event Planning Website Styles
+   Míriam Domínguez Martínez - 04.03.26
+*/
+
+/* ============================================
+   1. COLORS & VARIABLES
+*/
+
+/* This section defines the color palette and CSS variables */
+:root {
+    --primary-purple: #9f7ab0;
+    --light-purple: #e8d3f2;
+    --dark-gray: #4a4058;
+    --very-light-purple: #faf6fd;
+    --white: #FFFFFF;
+    --dark-text: #2c2533;
+    --semi-transparent: rgba(15, 15, 15, 0.5);
+    --max-width: 1200px;
+}
+
+/* ============================================
+   2. FONTS
+*/
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('fonts/segoe-ui-regular.woff2') format('woff2'),
+         url('fonts/segoe-ui-regular.woff') format('woff');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('fonts/segoe-ui-semibold.woff2') format('woff2'),
+         url('fonts/segoe-ui-semibold.woff') format('woff');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('fonts/segoe-ui-bold.woff2') format('woff2'),
+         url('fonts/segoe-ui-bold.woff') format('woff');
+    font-weight: 700;
+}
+
+/* ============================================
+   3. GLOBAL STYLES
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and borders */
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--dark-text); /* Default text color */
+    background-color: var(--white); /* Default background color */
+    line-height: 1.6;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+/* ============================================
+   4. TYPOGRAPHY
+*/
+
+h1 {
+    font-size: 56px; /* Large, bold heading for hero section */
+    font-weight: 700; /* Extra bold for maximum impact */
+    line-height: 1.2; /* Tight line height for better readability */
+    color: var(--white); /* White text for contrast against hero background */
+    text-shadow: 0 2px 8px var(--semi-transparent); /* Subtle shadow for better legibility */
+}
+
+h2 {
+    font-size: 35.2px; /* Prominent size for section headings */
+    font-weight: 700;
+    color: var(--primary-purple); /* Primary color for section headings */
+    margin-bottom: 48px; /* Increased spacing below headings for better separation */
+    text-align: center;
+}
+
+h3 {
+    font-size: 20.8px; /* Slightly larger than body text for subheadings */
+    font-weight: 600;
+    color: var(--primary-purple); 
+    margin-bottom: 16px;
+}
+
+p {
+    font-size: 16px; /* Standard size for body text */
+    color: var(--dark-text); /* Dark text for readability */
+    line-height: 1.8; /* Increased line height for better readability */
+}
+
+/* ============================================
+   5. HEADER & NAVIGATION
+*/
+
+header {
+    background-color: var(--white); /* Default background color */
+    padding: 24px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky; /* Makes the header stick to the top of the viewport */
+    top: 0; /* Ensures the header stays at the top */
+    z-index: 100; /* Ensures the header stays above other content */
+}
+
+header {
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 20.8px;
+    font-weight: 700;
+    color: var(--primary-purple);
+}
+
+nav ul {
+    list-style: none; /* Removes default list styling */
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    text-decoration: none; /* Removes underline from links */
+    color: var(--dark-text); /* Default link color */
+    font-size: 15.2px;
+    font-weight: 500;
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+    position: relative; /* Allows for the underline effect on hover */
+}
+
+nav a:hover {
+    color: var(--primary-purple);
+}
+
+nav a::after {
+    content: ''; /* Creates a pseudo-element for the underline effect */
+    position: absolute; /* Creates a pseudo-element for the underline effect */
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-purple);
+    transition: width 0.3s ease; /* Smooth transition for the underline effect */
+}
+
+nav a:hover::after {
+    width: 100%; /* Expands the underline to full width on hover */
+}
+
+/* ============================================
+   6. HERO SECTION
+*/
+
+.hero {
+    position: relative;
+    height: 600px;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('img/hero.jpg'); /* Background image with a dark overlay for better text contrast */
+    background-size: cover;
+    background-position: center;
+    display: flex; /* Uses flexbox to center the content both vertically and horizontally */
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-align: center;
+}
+
+.hero::before {
+    content: ''; /* Creates a pseudo-element for the gradient overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(159, 122, 176, 0.1), rgba(232, 211, 242, 0.1)); /* Subtle diagonal gradient overlay for added visual interest */
+    z-index: 1; /* Places the pseudo-element behind the hero content */
+}
+
+.hero-content {
+    position: relative; /* Ensures the content is above the pseudo-element */
+    z-index: 2;
+    max-width: 800px;
+    animation: fadeInUp 1s ease-out; /* Adds a fade-in animation to the hero content */
+}
+
+.hero h1 {
+    margin-bottom: 16px;  /* Adds spacing below the main heading */
+    font-size: 51.2px; /* Slightly smaller than the default h1 size for better fit in the hero section */
+}
+
+.hero-subtitle {
+    font-size: 19.2px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 32px;
+}
+
+/* Keyframes for the fade-in animation of the hero content */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* Starts slightly below and moves up into place */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Ends at the original position */
+    }
+}
+
+/* ============================================
+   7. ABOUT SECTION
+*/
+
+.about {
+    padding: 80px 48px;
+    background-color: var(--very-light-purple);
+    margin: 0 auto;
+    max-width: var(--max-width); /* Centers the content and limits its maximum width for better readability */
+}
+
+.about h2 {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.about-content {
+    display: grid; /* Uses CSS Grid to create a two-column layout for the about section */
+    grid-template-columns: 1fr 1fr; /* Creates a two-column layout for the about section */
+    gap: 48px; /* Adds spacing between the text and image */
+    align-items: center;
+}
+
+.about-text {
+    font-size: 16px;
+    line-height: 1.8; /* Increases line height for better readability */
+}
+
+.about-text p {
+    margin-bottom: 24px; /* Adds spacing between paragraphs for better readability */
+}
+
+.about-image {
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+}
+
+/* ============================================
+   8. SERVICES SECTION
+*/
+
+.services {
+    padding: 80px 50px;
+    background-color: var(--white);
+    margin: 0 auto;
+    max-width: var(--max-width);
+}
+
+.services h2 {
+    margin-bottom: 70px;
+}
+
+.services-grid { 
+    display: flex; /* Uses flexbox to create a vertical layout for the service cards */
+    flex-direction: column; /* Stacks the service cards vertically */
+    gap: 64px; /* Adds spacing between the service cards for better separation */
+    margin-top: 48px; /* Adds spacing above the service cards for better separation from the heading */
+}
+
+.service-card {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Creates a two-column layout with more space for the image */
+    gap: 32px;
+    align-items: center;
+    animation: slideIn 0.8s ease-out; /* Adds a slide-in animation to each service card */
+}
+
+/* Service 2: Image left, Text right (Special inverted case) */
+.service-card.row-reverse {
+    grid-template-columns: 1.2fr 1fr;
+}
+
+.service-card.row-reverse .service-image {
+    order: 1; /* Ensures the image is on the left */
+}
+
+.service-card.row-reverse .service-text {
+    order: 2; /* Ensures the text is on the right */
+}
+
+.service-text h3 {
+    margin-bottom: 16px;
+}
+
+.service-image {
+    width: 70%;
+    height: 300px;
+    max-height: 300px;
+    background-color: #e0e0e0;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;  /* Centers the image within its grid cell */
+}
+
+/* Keyframes for the slide-in animation of the service cards */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px); /* Starts slightly to the left and moves into place */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Ends at the original position */
+    }
+}
+
+/* ============================================
+   9. LOCATION SECTION
+*/
+
+.location {
+    padding: 80px 48px;
+    background-color: var(--very-light-purple);
+    margin: 0 auto;
+    max-width: var(--max-width);
+    text-align: center;
+}
+
+.location h2 {
+    margin-bottom: 48px;
+}
+
+.map-container {
+    width: 100%;
+    height: 400px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    margin-top: 32px;
+    overflow: hidden; /* Ensures the map iframe does not overflow the container */
+}
+
+.map-container iframe { /* Styles the embedded map iframe to fit perfectly within the container */
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ============================================
+   10. CONTACT SECTION
+*/
+
+.contact {
+    padding: 80px 48px;
+    background-color: var(--white);
+    margin: 0 auto;
+    max-width: var(--max-width);
+}
+
+.contact h2 {
+    margin-bottom: 48px; 
+}
+
+.contact-grid {
+    display: grid; /* Uses CSS Grid to create a two-column layout for the contact section */
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+}
+
+.contact-info {
+    background-color: var(--very-light-purple);
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.contact-info h3 {
+    margin-bottom: 24px;
+    color: var(--dark-text);
+}
+
+.contact-info p {
+    margin-bottom: 12.8px;
+    font-size: 15.2px;
+}
+
+.contact-form {
+    display: flex; /* Uses flexbox to create a vertical layout for the contact form */
+    flex-direction: column; /* Stacks the form fields vertically */
+    gap: 19.2px; /* Adds spacing between the form fields for better separation */
+}
+
+.form-group {
+    display: flex; /* Uses flexbox to create a vertical layout for each form group (label and input) */
+    flex-direction: column; /* Stacks the label and input vertically */
+}
+
+.form-group label { /* Styles the labels for the form fields to be clear and visually distinct */
+    font-size: 14.4px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--dark-text);
+}
+
+.form-group input, /* Styles the input fields for the contact form to be user-friendly and visually consistent */
+.form-group textarea { /* Styles the textarea field for the contact form to be user-friendly and visually consistent */
+    padding: 12.8px 16px;
+    border: 1px solid #d0d0d0;
+    border-radius: 6px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 15.2px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Adds a smooth transition for the focus state of the input fields */
+}
+
+.form-group input:focus, /* Adds a focus state for the input fields to improve user experience and accessibility */
+.form-group textarea:focus { /* Adds a focus state for the textarea field to improve user experience and accessibility */
+    outline: none;
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 0 3px rgba(159, 122, 176, 0.1); /* Adds a subtle shadow to indicate focus on the input fields */
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    background-color: var(--primary-purple);
+    color: var(--white);
+    border: none; /* Removes default border from the submit button for a cleaner look */
+    padding: 16px 32px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer; /* Changes the cursor to a pointer when hovering over the submit button to indicate it's clickable */
+    transition: all 0.3s ease; /* Adds a smooth transition for the hover state of the submit button */
+    text-transform: uppercase; /* Transforms the button text to uppercase for a more impactful call-to-action */
+    letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+    background-color: #8a6899;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(159, 122, 176, 0.3); /* Adds a shadow on hover to give the button a lifted effect */
+}
+
+/* ============================================
+   11. FOOTER
+*/
+
+footer {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    padding: 32px 48px;
+    text-align: center;
+    font-size: 14.4px;
+}
+
+footer p {
+    color: var(--white);
+    margin: 0; /* Removes default margin from the footer paragraph for better spacing */
+}
