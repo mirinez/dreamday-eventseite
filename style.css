@@ -206,7 +206,9 @@ nav a:hover::after {
     margin-bottom: 32px;
 }
 
-/* Keyframes for the fade-in animation of the hero content */
+/* Keyframes for the fade-in animation of the hero content 
+   (I found this on internet)
+*/
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -318,7 +320,9 @@ nav a:hover::after {
     display: block;  /* Centers the image within its grid cell */
 }
 
-/* Keyframes for the slide-in animation of the service cards */
+/* Keyframes for the slide-in animation of the service cards 
+   (I found this on internet)
+*/
 @keyframes slideIn {
     from {
         opacity: 0;
