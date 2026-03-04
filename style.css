@@ -478,3 +478,150 @@ footer p {
     color: var(--white);
     margin: 0; /* Removes default margin from the footer paragraph for better spacing */
 }
+
+/* ============================================
+   12. MEDIA QUERIES - RESPONSIVE DESIGN
+*/
+
+@media (max-width: 768px) {
+    
+    /* Header */
+    header {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    /* Typography */
+    h1 { 
+        font-size: 32px; 
+    }
+
+    h2 { 
+        font-size: 24px; 
+    }
+
+    p { 
+        font-size: 14px; 
+    }
+
+    /* Hero */
+    .hero { 
+        height: 300px; 
+    }
+
+    .hero h1 { 
+        font-size: 28px; 
+    }
+
+    /* About */
+    .about { 
+        padding: 40px 20px; 
+    }
+
+    .about-content { 
+        grid-template-columns: 1fr; 
+    }
+
+    .about-image {
+        margin: 0 auto;
+        display: block;
+    }
+
+    /* Services */
+    .services { 
+        padding: 40px 20px; 
+    }
+
+    .service-card { 
+        flex-direction: column; 
+    }
+
+    .service-image { 
+        width: 100%; height: 200px; 
+    }
+
+    /* Contact */
+    .contact-grid { 
+        grid-template-columns: 1fr; 
+    }
+    
+    /* Footer */
+    footer { 
+        padding: 20px; font-size: 12px; 
+    }
+}
+
+@media (max-width: 480px) {
+    
+    /* Header */
+    header { 
+        padding: 15px; 
+    }
+
+    .logo { 
+        font-size: 14px; 
+    }
+
+    nav a { 
+        font-size: 11px; 
+    }
+
+    /* Typography */
+    h1 { 
+        font-size: 24px; 
+    }
+
+    h2 { 
+        font-size: 18px; 
+    }
+
+    p { 
+        font-size: 13px; 
+    }
+
+    /* Hero */
+    .hero { 
+        height: 250px; 
+    }
+
+    .hero h1 { 
+        font-size: 22px; 
+    }
+
+    /* Sections */
+    .about { 
+        padding: 30px 15px; 
+    }
+
+    .services { 
+        padding: 30px 15px; 
+    }
+
+    .location { 
+        padding: 30px 15px; 
+    }
+
+    .contact { 
+        padding: 30px 15px; 
+    }
+
+    .service-image { 
+        height: 180px; 
+    }
+    
+    /* Form */
+    .form-group input,
+    .form-group textarea { 
+        font-size: 13px; 
+    }
+    
+    .submit-btn { 
+        font-size: 12px; 
+    }
+}
